@@ -11,6 +11,24 @@ git clone https://github.com/qishuai6/crdesign-skill.git ~/.claude/skills/crdesi
 
 安装完成后，在 Claude Code 中生成 Vue 3 UI 代码时，会自动遵循 CRDesign 设计规范。
 
+## 更新
+
+```bash
+# 检查是否有新版本
+bash ~/.claude/skills/crdesign/scripts/update.sh check
+
+# 更新到最新版本
+bash ~/.claude/skills/crdesign/scripts/update.sh update
+
+# 查看当前版本
+bash ~/.claude/skills/crdesign/scripts/update.sh version
+
+# 查看更新日志
+bash ~/.claude/skills/crdesign/scripts/update.sh changelog
+```
+
+也可以在 Claude Code 中直接说「更新 CRDesign skill」，会自动执行更新。
+
 ## 特性
 
 - **全量组件映射** — 覆盖 ant-design-vue 4.x 全部 68 个组件，含 CRDesign 主题配置
@@ -18,14 +36,18 @@ git clone https://github.com/qishuai6/crdesign-skill.git ~/.claude/skills/crdesi
 - **ConfigProvider 主题** — 开箱即用的全局主题配置，一键注入 CRDesign 品牌色
 - **组件优先** — 强制使用 antd-vue 组件，禁止手写重复功能的纯 CSS/HTML
 - **设计数据** — `data/tokens.json` 包含结构化的完整 Token 数据
+- **自动更新** — 内置更新脚本，一条命令获取最新版本
 
 ## 目录结构
 
 ```
 crdesign-skill/
 ├── SKILL.md          # Skill 主文件（组件映射 + 规则 + 主题配置）
+├── scripts/
+│   └── update.sh     # 自动更新脚本
 ├── data/
-│   └── tokens.json   # 设计 Token 结构化数据
+│   ├── tokens.json   # 设计 Token 结构化数据
+│   └── version.json  # 版本号与更新日志
 └── README.md
 ```
 

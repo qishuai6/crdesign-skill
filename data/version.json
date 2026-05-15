@@ -1,0 +1,24 @@
+{
+  "version": "1.1.0",
+  "changelog": [
+    {
+      "version": "1.1.0",
+      "date": "2026-05-15",
+      "changes": [
+        "新增 update.sh 自动更新脚本",
+        "新增 version.json 版本管理",
+        "SKILL.md 新增更新指南章节"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "date": "2026-05-10",
+      "changes": [
+        "初始版本",
+        "完整 CRDesign Token 体系",
+        "68 个 antd-vue 组件映射",
+        "ConfigProvider 全局主题配置"
+      ]
+    }
+  ]
+}

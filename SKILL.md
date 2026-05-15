@@ -1425,3 +1425,37 @@ CRDesign：按钮色 `--cr-brand-6`。
 - **禁止** 使用非 PingFang SC / system-ui 的字体
 - **禁止** 使用 antd 默认蓝色 `#1890ff` 作为主色，CRDesign 主色是 `#F99D33`
 - **禁止** 引入 antd 样式后不做主题覆盖
+
+---
+
+## 更新与版本管理
+
+### 当前版本
+
+查看 `data/version.json` 获取版本号。
+
+### 用户更新方式
+
+当用户说「更新 CRDesign skill」「检查 crdesign 更新」时，执行：
+
+```bash
+# 检查是否有新版本
+bash ~/.claude/skills/crdesign/scripts/update.sh check
+
+# 更新到最新版本
+bash ~/.claude/skills/crdesign/scripts/update.sh update
+
+# 查看当前版本
+bash ~/.claude/skills/crdesign/scripts/update.sh version
+
+# 查看更新日志
+bash ~/.claude/skills/crdesign/scripts/update.sh changelog
+```
+
+### 版本号规则
+
+- 主版本号：不兼容的 API 变更
+- 次版本号：新增组件或 Token
+- 修订号：Bug 修复或文案调整
+
+版本记录保存在 `data/version.json`。
