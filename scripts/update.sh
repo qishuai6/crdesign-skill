@@ -26,9 +26,17 @@ get_local_version() {
 }
 
 get_remote_version() {
-  curl -fsSL "https://raw.githubusercontent.com/qishuai6/crdesign-skill/main/data/version.json" 2>/dev/null \
-    | grep -o '"version"[[:space:]]*:[[:space:]]*"[^"]*"' | head -1 | sed 's/.*: *"//;s/"//' \
-    || echo "unknown"
+  local v
+  # 方法 1: raw.githubusercontent.com
+  v=$(curl -fsSL "https://raw.githubusercontent.com/qishuai6/crdesign-skill/main/data/version.json" 2>/dev/null \
+    | grep -o '"version"[[:space:]]*:[[:space:]]*"[^"]*"' | head -1 | sed 's/.*: *"//;s/"//')
+  # 方法 2: gh CLI fallback
+  if [ -z "$v" ] && command -v gh >/dev/null 2>&1; then
+    v=$(gh api repos/qishuai6/crdesign-skill/contents/data/version.json --jq '.content' 2>/dev/null \
+      | base64 -d 2>/dev/null \
+      | grep -o '"version"[[:space:]]*:[[:space:]]*"[^"]*"' | head -1 | sed 's/.*: *"//;s/"//')
+  fi
+  echo "${v:-unknown}"
 }
 
 cmd_check() {
