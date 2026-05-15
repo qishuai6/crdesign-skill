@@ -1,6 +1,17 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "changelog": [
+    {
+      "version": "1.2.0",
+      "date": "2026-05-15",
+      "changes": [
+        "技术基线调整为 Vue 3 + ant-design-vue 3.x",
+        "SKILL.md 新增完整的间距与布局规范",
+        "tokens.json 新增 spacing、layout、grid、breakpoint 结构化 token",
+        "移除偏 ant-design-vue 4.x token API 的默认表述，避免主题实现误导",
+        "README 同步更新版本说明与使用口径"
+      ]
+    },
     {
       "version": "1.1.0",
       "date": "2026-05-15",

@@ -1,78 +1,74 @@
 # CRDesign Skill
 
-CRDesign 设计规范 Claude Code Skill，基于 ant-design-vue 4.x 二次封装，用于生成符合品牌规范的 Vue 3 前端代码。
+CRDesign Web Skill，面向 `Vue 3 + ant-design-vue 3.x` 的设计规范与实现约束。它用于让 AI 生成符合 CRDesign 规则的 Web 页面、表单、工作台和中后台界面。
+
+## 这次版本的重点
+
+- 技术基线统一为 `ant-design-vue 3.x`
+- 补齐完整的间距与布局规范
+- 新增 spacing、layout、grid、breakpoint 结构化 token
+- 去掉偏 `4.x` 主题 token API 的默认表述，避免误导
 
 ## 安装
 
 ```bash
-# 克隆到 Claude Code skills 目录
 git clone https://github.com/qishuai6/crdesign-skill.git ~/.claude/skills/crdesign
 ```
 
-安装完成后，在 Claude Code 中生成 Vue 3 UI 代码时，会自动遵循 CRDesign 设计规范。
+安装后，Claude Code / Codex 在引用 CRDesign skill 生成 Web 前端代码时，会自动优先遵循：
+
+- `ant-design-vue 3.x` 组件优先
+- 统一 spacing token
+- 统一 layout token
+- 统一栅格与响应式节奏
 
 ## 更新
 
 ```bash
-# 检查是否有新版本
 bash ~/.claude/skills/crdesign/scripts/update.sh check
-
-# 更新到最新版本
 bash ~/.claude/skills/crdesign/scripts/update.sh update
-
-# 查看当前版本
 bash ~/.claude/skills/crdesign/scripts/update.sh version
-
-# 查看更新日志
 bash ~/.claude/skills/crdesign/scripts/update.sh changelog
 ```
 
-也可以在 Claude Code 中直接说「更新 CRDesign skill」，会自动执行更新。
-
-## 特性
-
-- **全量组件映射** — 覆盖 ant-design-vue 4.x 全部 68 个组件，含 CRDesign 主题配置
-- **设计 Token 体系** — 完整的颜色（品牌/灰/成功/警示/错误/青蓝/紫/橙）、排版、圆角、阴影变量
-- **ConfigProvider 主题** — 开箱即用的全局主题配置，一键注入 CRDesign 品牌色
-- **组件优先** — 强制使用 antd-vue 组件，禁止手写重复功能的纯 CSS/HTML
-- **设计数据** — `data/tokens.json` 包含结构化的完整 Token 数据
-- **自动更新** — 内置更新脚本，一条命令获取最新版本
-
 ## 目录结构
 
-```
+```text
 crdesign-skill/
-├── SKILL.md          # Skill 主文件（组件映射 + 规则 + 主题配置）
+├── SKILL.md
+├── README.md
 ├── scripts/
-│   └── update.sh     # 自动更新脚本
-├── data/
-│   ├── tokens.json   # 设计 Token 结构化数据
-│   └── version.json  # 版本号与更新日志
-└── README.md
+│   └── update.sh
+└── data/
+    ├── tokens.json
+    └── version.json
 ```
 
-## 依赖
+## 依赖基线
 
 ```json
 {
-  "vue": "^3.3",
-  "ant-design-vue": "^4.x",
-  "@ant-design/icons-vue": "^7.x"
+  "dependencies": {
+    "vue": "^3.3.0",
+    "ant-design-vue": "^3.2.0",
+    "@ant-design/icons-vue": "^6.1.0"
+  }
 }
 ```
 
-## 设计 Token 概览
+## 规则摘要
 
-| 类别 | 主色 | 色阶 |
-|------|------|------|
-| 品牌色 | #F99D33 | 10 级渐变 |
-| 灰色 | #CACACA | 12 级渐变 |
-| 成功色 | #4DAC39 | 10 级渐变 |
-| 警示色 | #F7BA1E | 10 级渐变 |
-| 错误色 | #F53F3F | 10 级渐变 |
-| 青蓝色 | #13A8A8 | 10 级渐变 |
-| 紫色 | #722ED1 | 10 级渐变 |
-| 橙色 | #FA541C | 10 级渐变 |
+- 所有间距必须落到 token，不允许任意像素值
+- 页面必须先定容器、栅格、模块节奏，再写组件
+- Web 页面优先使用 `a-layout`、`a-row`、`a-col`、`a-card`、`a-form`、`a-table`
+- 主题定制优先使用 CRDesign token 与统一样式入口
+- 默认品牌主色为 `#F99D33`，不是 antd 默认蓝
+
+## 数据文件
+
+- [SKILL.md](./SKILL.md)
+- [tokens.json](./data/tokens.json)
+- [version.json](./data/version.json)
 
 ## License
 
