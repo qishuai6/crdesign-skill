@@ -1,6 +1,6 @@
 # CRDesign Skill
 
-华润医药商业（CRDesign）设计规范 Claude Code Skill，基于 ant-design-vue 4.x 二次封装，用于生成符合品牌规范的 Vue 3 前端代码。
+CRDesign 设计规范 Claude Code Skill，基于 ant-design-vue 4.x 二次封装，用于生成符合品牌规范的 Vue 3 前端代码。
 
 ## 安装
 

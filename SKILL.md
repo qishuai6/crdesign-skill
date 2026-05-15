@@ -1,11 +1,11 @@
 ---
 name: crdesign
-description: "华润医药商业 CRDesign 设计规范与组件库。基于 ant-design-vue 4.x 二次封装，完整 token 体系（颜色/排版/圆角/阴影）+ 全量组件映射（68 个 antd-vue 组件）。生成 Vue 3 代码时优先使用 antd-vue 组件 + CRDesign token 覆盖，禁止纯 CSS 手写重复功能。Actions: build, design, implement, review, fix, check。Elements: 全量 antd-vue 组件。"
+description: "CRDesign 设计规范与组件库。基于 ant-design-vue 4.x 二次封装，完整 token 体系（颜色/排版/圆角/阴影）+ 全量组件映射（68 个 antd-vue 组件）。生成 Vue 3 代码时优先使用 antd-vue 组件 + CRDesign token 覆盖，禁止纯 CSS 手写重复功能。Actions: build, design, implement, review, fix, check。Elements: 全量 antd-vue 组件。"
 ---
 
-# CRDesign - 华润医药商业设计规范
+# CRDesign 设计规范
 
-华润医药商业（CRDesign）企业级设计系统，基于 ant-design-vue 4.x 二次封装，用于生成符合品牌规范的 Vue 3 前端代码。
+CRDesign 企业级设计系统，基于 ant-design-vue 4.x 二次封装，用于生成符合品牌规范的 Vue 3 前端代码。
 
 ## 核心规则：组件优先
 
